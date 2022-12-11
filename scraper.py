@@ -114,7 +114,7 @@ class ActiveCashrain:
         print("importantAlert")
         message = self.link + "  " + str(self.bch) + "  " + self.timeleft
         url = f"https://api.telegram.org/bot{tmtoken}/sendMessage?chat_id={user}&text={message}"
-        print(requests.get(url).json()) # this sends the message
+        requests.get(url).json() # this sends the message
       # url = f"https://api.telegram.org/bot{tmtoken}/getUpdates"
       # print(requests.get(url).json())
 
@@ -163,3 +163,4 @@ for i in range(len(test)):
 asdf
 
 url = f"https://api.telegram.org/bot{tmtoken}/sendMessage?chat_id={user}&text={asdf}"
+requests.get(url).json()
