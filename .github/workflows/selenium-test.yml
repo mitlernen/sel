@@ -2,7 +2,9 @@
 
 name: scrape
 on:
-  workflow_dispatch:
+  schedule:
+  # see https://crontab.guru)
+    - cron: '15 */3 * * *'
 jobs:
   scrape:
     runs-on: ubuntu-latest
