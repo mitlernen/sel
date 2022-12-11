@@ -23,7 +23,7 @@ jobs:
         run: sudo apt install -y chromium-browser
       - name: Install all necessary packages
         run: pip install requests beautifulsoup4 pandas webdriver-manager selenium
-      - name: Env vars for python
-        run: TMTOKEN=${{ secrets.TMTOKEN }} USER1=${{ secrets.USER1 }}
+      # - name: Env vars for python
+      #   run: 
       - name: Run the scraping script
-        run: python scraper.py
+        run: TMTOKEN=${{ secrets.TMTOKEN }} USER1=${{ secrets.USER1 }} python scraper.py
