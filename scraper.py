@@ -1,5 +1,11 @@
+import requests
 import os
 print(os.environ['USER1'])
+tmtoken = os.environ['TMTOKEN']
+user = os.environ['USER1']
+message = "GITHUB ACTION IS WORKING!"
+url = f"https://api.telegram.org/bot{tmtoken}/sendMessage?chat_id={user}&text={message}"
+print(requests.get(url).json())
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
