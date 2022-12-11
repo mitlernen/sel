@@ -1,5 +1,5 @@
 import os
-print(os.environ)
+print(os.environ['USER1'])
 
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
