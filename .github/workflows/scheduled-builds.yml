@@ -1,9 +1,8 @@
-
-# .github/workflows/scheduled-builds.yml
 name: Experiment
+
 on: 
   schedule:
-  - cron: '37 * * * *'
+  - cron: '5 6,14,21 * * *'
 
 jobs:
   build:
