@@ -1,6 +1,6 @@
 import requests
 import os
-print(os.environ['USER1'])
+
 tmtoken = os.environ['TMTOKEN']
 user = os.environ['USER1']
 
@@ -9,6 +9,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
+
+# from selenium_profiles.driver import driver as mydriver
+# from selenium_profiles.profiles import profiles
+from selenium.webdriver.common.by import By  # locate elements
+# from selenium_profiles.utils.colab_utils import display, showscreen, show_html # virtual display
+from selenium.webdriver.support.ui import Select
 
 chrome_service = Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
 
