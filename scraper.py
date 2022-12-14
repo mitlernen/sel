@@ -55,7 +55,7 @@ cashrainlinks = ["https://cashrain.com/",
 
 checkoutlinks = []
 
-for i in range(6):
+for i in range(9):
   loadmore = driver.find_elements(By.CLASS_NAME, "light-button")
   for elem in loadmore:
     if elem.get_attribute("textContent") == "Load more":
@@ -74,7 +74,7 @@ driver.get("https://cashrain.com/explore")
 # testdd= driver.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/main/section/div/div[1]/div[2]/select')
 select = Select(driver.find_elements(By.XPATH, '//*[@id="__next"]/div[2]/main/section/div/div[1]/div[2]/select')[0])
 select.select_by_visible_text('Newest')
-for i in range(7):
+for i in range(9):
   loadmore = driver.find_elements(By.CLASS_NAME, "light-button")
   for elem in loadmore:
     if elem.get_attribute("textContent") == "Load more":
@@ -135,7 +135,7 @@ def getData(mydata,start=0):
         bch = float(money[1].split(" BCH")[0])
       except(ValueError):
         if (money[1].split(" BCH")[0] == "<0.01"):
-          bch = 0.001
+          bch = 0.01
       test1 = ActiveCashrain(bch,timeleft,checkoutlinks[i])
       test1.alert()
       mydata.append(test1)
@@ -154,7 +154,7 @@ mydata.sort(key=mySort,reverse=True)
 
 
 
-test = [x for x in mydata if x.bch >= 0.03]
+test = [x for x in mydata if x.bch >= 0.01]
 test = [x for x in test if x.timeleft != "0:00:00"]
 
 asdf = ""
