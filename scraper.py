@@ -129,7 +129,10 @@ def getData(mydata,start=0):
     isacr = driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/h2')
     if isacr.get_attribute("textContent") == "Active Cashrain":
       timeleft = (driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/div/div/div[2]/div[2]/span/span').get_attribute("textContent").split(" h left")[0])
-      money = (driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/div/div/div[2]/div[2]/div[1]/div[5]/span').get_attribute("textContent").split(" | "))
+      try:
+        money = (driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/div/div/div[2]/div[2]/div[1]/div[5]/span').get_attribute("textContent").split(" | "))
+      except:
+        continue
       # dollar = float(money[0].split("$")[1])
       try:
         bch = float(money[1].split(" BCH")[0])

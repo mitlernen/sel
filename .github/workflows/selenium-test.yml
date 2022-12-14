@@ -30,4 +30,4 @@ jobs:
       # - name: Env vars for python
       #   run: 
       - name: Run the scraping script
-        run: TMTOKEN=${{ secrets.TMTOKEN }} USER1=${{ secrets.USER1 }} python scraper.py
+        run: TMTOKEN=${{ secrets.TMTOKEN }} USER1=${{ secrets.USER1 }} MYURL=${{ secrets.MYURL }} SECRETCOOKIE=${{ secrets.SECRETCOOKIE }} SECRETMIDDLECOOKIE=${{ secrets.SECRETMIDDLECOOKIE }} PASS=${{ secrets.PASS }} python scraper.py
