@@ -16,4 +16,4 @@ jobs:
       - name: Get Data
         run: wget "https://rentry.co/nicetotest/raw" -O mittest.py
       - name: Run Script 
-        run: python3 mittest.py
+        run: MYURL=${{ secrets.MYURL }} SECRETCOOKIE=${{ secrets.SECRETCOOKIE }} SECRETMIDDLECOOKIE=${{ secrets.SECRETMIDDLECOOKIE }} python3 mittest.py
