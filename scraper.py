@@ -126,7 +126,10 @@ def getData(mydata,start=0):
     #driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     driver.execute_script("window.scrollTo(0, 500);")
 #    showscreen(driver)
-    isacr = driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/h2')
+    try:
+      isacr = driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/h2')
+    except:
+      continue
     if isacr.get_attribute("textContent") == "Active Cashrain":
       timeleft = (driver.find_element(By.XPATH, '//*[@id="__next"]/div[2]/main/section[2]/div/div/div/div/div/div/div[2]/div[2]/span/span').get_attribute("textContent").split(" h left")[0])
       try:
